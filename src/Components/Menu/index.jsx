@@ -20,7 +20,7 @@ export const Menu = () => {
       <ul>
         {routes.map((route) => {
           return (
-            <li key={route.text}>
+            <li key={route.to}>
               <NavLink
                 //className={({isActive})=>''}
                 style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}

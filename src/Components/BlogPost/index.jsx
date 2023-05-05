@@ -14,6 +14,7 @@ export const BlogPost = () => {
   const navigate = useNavigate();
   const returnToBlog = () => {
     navigate('/blog');
+    //navigate(-1); Esto es como darle hacia atras en nuestro historial de navegación.
   }
   /**
     Vamos a recorrer el arreglo de los datos ya definidos y comparar cuando el slug definido anteriormente y 

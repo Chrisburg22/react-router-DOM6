@@ -33,7 +33,10 @@ export const Menu = () => {
                 )
             })
         }
-        {/* {<li>
+        {/*
+        Todo esto es evitado trabajando con array y objetos con un poco de logica. De esta manera la cantidad de lineas
+        de codigo que vamos a escribir.
+         {<li>
           <Link to="/">Home</Link>
         </li>
         <li>

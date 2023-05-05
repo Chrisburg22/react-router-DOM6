@@ -3,36 +3,34 @@ import { Link, NavLink } from "react-router-dom";
 
 const routes = [];
 routes.push({
-    to: '/',
-    text: "home",
+  to: "/",
+  text: "home",
 });
 routes.push({
-    to: '/blog',
-    text: "Blog",
+  to: "/blog",
+  text: "Blog",
 });
 routes.push({
-    to: '/profile',
-    text: "Profile",
+  to: "/profile",
+  text: "Profile",
 });
 export const Menu = () => {
   return (
     <div>
       <ul>
-        {
-            routes.map((route)=>{
-                return (
-                    <li>
-          <NavLink
-            //className={({isActive})=>''}
-            style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}
-            to={route.to}
-          >
-            {route.text}
-          </NavLink>
-        </li>
-                )
-            })
-        }
+        {routes.map((route) => {
+          return (
+            <li key={route.text}>
+              <NavLink
+                //className={({isActive})=>''}
+                style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}
+                to={route.to}
+              >
+                {route.text}
+              </NavLink>
+            </li>
+          );
+        })}
         {/*
         Todo esto es evitado trabajando con array y objetos con un poco de logica. De esta manera la cantidad de lineas
         de codigo que vamos a escribir.
@@ -74,4 +72,3 @@ export const Menu = () => {
     </div>
   );
 };
-

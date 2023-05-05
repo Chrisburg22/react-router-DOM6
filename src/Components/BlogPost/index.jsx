@@ -1,0 +1,26 @@
+import { NavLink, useParams } from 'react-router-dom';
+import {blogData} from '../../Data/blogData';
+
+export const BlogPost = () => {
+  /**
+    Con este Hook podemos conocer los parametros que son usados en la etiqueta Router
+    la cual va a utilizar este componente para renderizarlo en una ruta dinamica.
+  */
+  const {slug} = useParams();
+
+  /**
+    Vamos a recorrer el arreglo de los datos ya definidos y comparar cuando el slug definido anteriormente y 
+    la propiedad slug de nuestro arreglo coisidan, cunado esto ocurra nuestra nueva constante sera el objeto
+    que encontramos. 
+   */
+  const blogPost = blogData.find(post => post.slug === slug);
+
+  return (
+    <>
+    <h2>{blogPost.title}</h2>
+    <p>{blogPost.author}</p>
+    <p>{blogPost.content}</p>
+    </>
+  );
+}
+

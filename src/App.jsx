@@ -7,6 +7,7 @@ import { Menu } from './Components/Menu'
 import { HomePage } from './Components/HomePage'
 import { BlogPage } from './Components/BlogPage'
 import { ProfilePage } from './Components/ProfilePage'
+import { BlogPost } from './Components/BlogPost'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPost/>} /> {/**Route nos permite hacer rutas dinamicas con los dos puntos */}
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="*" element={<p>Not found</p>} />
         </Routes>

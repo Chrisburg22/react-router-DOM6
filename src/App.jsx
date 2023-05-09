@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { AuthProvider } from "./context/auth";
+import { AuthProvider, AuthRoute } from "./context/auth";
 import { Menu } from "./Components/Menu";
 import { HomePage } from "./Components/HomePage";
 import { BlogPage } from "./Components/BlogPage";
@@ -29,8 +29,22 @@ function App() {
             </Route>
 
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/logout" element={<LogoutPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
+            <Route 
+            path="/logout" 
+            element={
+              <AuthRoute>
+                <LogoutPage />
+              </AuthRoute>
+            } 
+            />
+            <Route 
+            path="/profile" 
+            element={
+              <AuthRoute>
+                <ProfilePage />
+              </AuthRoute>
+            } 
+            />
 
             <Route path="*" element={<p>Not found</p>} />
           </Routes>
